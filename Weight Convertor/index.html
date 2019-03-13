@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weighty Convertor</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<style type="text/css">
+		body {
+			margin-top: 70px; 
+			background: #333;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4 text-centre mb-3">Weight Convertor</h1>
+				<form>
+					<div class="form-group">
+						<input
+						id="lbsInput" 
+						type="number" 
+						placeholder="Enter Pounds......." 
+						class="form-control form-control-lg">
+					</div>
+				</form>
+
+				<div id="output">
+					<div class="card bg-primary mb-2">
+						<div class="card-block">
+							<h4>Grams:</h4>
+							<div id="gramsOutput"></div>
+						</div>
+					</div>
+
+					<div class="card bg-success mb-2">
+						<div class="card-block">
+							<h4>Kilograms:</h4>
+							<div id="kgOutput"></div>
+						</div>
+					</div>
+
+					<div class="card bg-danger mb-2">
+						<div class="card-block">
+							<h4>Ounces:</h4>
+							<div id="ozOutput"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		  document.getElementById("output").style.visibility = "hidden";
+		  document.getElementById("lbsInput").addEventListener("input", function(e) {
+		  document.getElementById("output").style.visibility = "visible";
+		  let lbs = e.target.value;
+		  document.getElementById("gramsOutput").innerHTML = lbs / 0.0022046;
+		  document.getElementById("kgOutput").innerHTML = lbs / 2.2046;
+		  document.getElementById("ozOutput").innerHTML = lbs * 16;
+	});
+	</script>
+</body>
+</html>
